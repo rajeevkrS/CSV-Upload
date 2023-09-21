@@ -1,8 +1,15 @@
 // IMPORTING PACKAGE
 const mongoose = require("mongoose");
 
+// storing the db on mongo atlas
+const DB = "mongodb+srv://rajeevkrs:rajeevkr.450@cluster0.xigfak7.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(DB).then(()=>{
+  console.log('Connection successful!');
+}).catch((err) => console.log("no connection " + err));
+
 // MAKING CONNECTION 
-mongoose.connect('mongodb://127.0.0.1:27017/csvUploads');
+// const DB = mongoose.connect('mongodb://127.0.0.1:27017/csvUploads');
 
 const db = mongoose.connection;
 
